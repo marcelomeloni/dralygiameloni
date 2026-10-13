@@ -2,7 +2,7 @@ import Image from "next/image";
 import { InstagramLogo, SealCheck } from "@phosphor-icons/react/dist/ssr";
 import Button from "@/components/Button";
 import Reveal from "@/components/Reveal";
-import { bio, site, values } from "@/lib/content";
+import { bio, registration, site, values } from "@/lib/content";
 
 export default function About() {
   return (
@@ -16,8 +16,8 @@ export default function About() {
         <Reveal>
           <div className="relative mx-auto aspect-[4/5] max-w-[340px] overflow-hidden rounded-[28px] border border-sage-light bg-cream lg:max-w-none">
             <Image
-              src={site.photo.src}
-              alt={site.photo.alt}
+              src={site.aboutPhoto.src}
+              alt={site.aboutPhoto.alt}
               fill
               sizes="(min-width: 1024px) 435px, 340px"
               className="object-cover"
@@ -42,7 +42,7 @@ export default function About() {
 
           <span className="mt-4 mb-5 inline-flex items-center gap-2 rounded-full border border-sage px-4 py-2 text-[0.75rem] font-semibold uppercase tracking-[0.12em] text-sage">
             <SealCheck size={16} weight="light" aria-hidden="true" />
-            CRM/RQE {site.crm}
+            {registration}
           </span>
 
           <ul className="mb-6 flex list-none flex-wrap gap-2.5">

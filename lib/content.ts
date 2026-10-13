@@ -1,3 +1,7 @@
+const address =
+  "Rua Salvador Corrêa, 603 — Sala 11-1, Edifício Ondina Maris, Jardim Vergueiro";
+const city = "Sorocaba - SP";
+
 export const site = {
   displayName: "Dra. Lygia Meloni",
   fullName: "Dra. Lygia Meloni Costa",
@@ -8,17 +12,27 @@ export const site = {
   },
   linktree: "https://linktr.ee/dralygiamelonipediatra",
   whatsapp: "5515997793504",
-  maps: "",
+  maps: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${address}, ${city}`)}`,
   email: "",
-  address: "",
-  hours: "",
-  crm: "",
-  city: "",
+  address,
+  hours: "8h às 18h",
+  crm: "172905",
+  rqe: {
+    pediatria: "94082",
+    neonatologia: "940821",
+  },
+  city,
   photo: {
     src: "/profissional.jpg",
     alt: "Dra. Lygia Meloni, pediatra neonatologista",
   },
+  aboutPhoto: {
+    src: "/sobre.jpg",
+    alt: "Dra. Lygia Meloni, pediatra neonatologista e pediatra integrativa",
+  },
 } as const;
+
+export const registration = `CRM ${site.crm} · RQE ${site.rqe.pediatria} (Pediatria) · RQE ${site.rqe.neonatologia} (Neonatologia)`;
 
 export const isPlaceholder = (value: string) => value.startsWith("[");
 

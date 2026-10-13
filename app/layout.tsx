@@ -5,7 +5,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Dra. Lygia Meloni | Pediatra Integrativa e Neonatologista",
   description:
-    "Pediatria Integrativa e Neonatologia com cuidado acolhedor para bebês e famílias. [PREENCHER cidade]",
+    "Pediatria Integrativa e Neonatologia com cuidado acolhedor para bebês e famílias em Sorocaba.",
   icons: {
     icon: [{ url: "/logo.svg", type: "image/svg+xml" }],
     apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
@@ -27,7 +27,7 @@ const jsonLd = {
   alternateName: site.displayName,
   medicalSpecialty: ["Pediatric", "Neonatology"],
   description:
-    "Pediatra neonatologista e pediatra integrativa. Atendimento acolhedor para bebês, crianças e famílias. [PREENCHER cidade]",
+    "Pediatra neonatologista e pediatra integrativa. Atendimento acolhedor para bebês, crianças e famílias em Sorocaba.",
   telephone: `+${site.whatsapp}`,
   email: site.email,
   sameAs: [site.instagram.url, site.linktree],

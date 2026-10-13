@@ -3,7 +3,7 @@ import {
   LinktreeLogo,
   WhatsappLogo,
 } from "@phosphor-icons/react/dist/ssr";
-import {site, whatsappHref } from "@/lib/content";
+import { registration, site, whatsappHref } from "@/lib/content";
 
 async function getCurrentYear() {
   "use cache";
@@ -48,7 +48,7 @@ export default async function Footer() {
         </div>
 
         <div className="mt-8 grid gap-3.5 border-t border-ink/15 pt-6 text-center text-[0.78rem] text-ink-soft">
-          <p>CRM/RQE {site.crm}</p>
+          <p>{registration}</p>
     
      
           <p>
