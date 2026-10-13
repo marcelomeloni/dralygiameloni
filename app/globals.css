@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+
+/* ============================================================
+   Identidade Visual - Dra. Lygia Meloni
+   Pediatria Integrativa / Neonatologia
+   Tailwind CSS v4 + fontes da marca
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   Tema (cores, fontes e raios da marca)
+   ------------------------------------------------------------ */
+
+@theme {
+  --color-sage: #8caa87;
+  --color-sage-light: #d0e5d0;
+  --color-cream: #fffaf8;
+  --color-rose: #d39ba4;
+
+  /* Derivadas para acessibilidade (WCAG AA) */
+  --color-rose-strong: #a1626e;
+  --color-rose-strong-hover: #8f5561;
+  --color-ink: #3e4b3a;
+  --color-ink-soft: #5c6b56;
+
+  --font-sans: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  --font-script: "Angelface", "Great Vibes", "Allura", cursive;
+
+  --radius-pill: 999px;
+}
+
+/* ------------------------------------------------------------
+   Tipografia
+   Coloque o arquivo em /public/fonts (o @font-face já está
+   pronto; até o envio do arquivo usa o fallback).
+   ------------------------------------------------------------ */
+
+@font-face {
+  font-family: "Angelface";
+  src: url("/fonts/Angelface.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ------------------------------------------------------------
+   Base
+   ------------------------------------------------------------ */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 8.5rem;
+    color-scheme: light;
+  }
+
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-ink);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-sage);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+}
+
+/* ------------------------------------------------------------
+   Utilitários da marca
+   ------------------------------------------------------------ */
+
+/* Pattern de corações em line art (rosa claro) */
+@utility bg-hearts {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 24 24' fill='none' stroke='%23D39BA4' stroke-width='0.75' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 20.5S4.2 15.2 2.6 10.6C1.6 7.6 3.6 5 6.4 5c2 0 3.4 1.2 4.1 2.4C11.2 6.2 12.6 5 14.6 5c2.8 0 4.8 2.6 3.8 5.6C16.8 15.2 12 20.5 12 20.5z'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 42px 42px;
+}
+
+/* Fade-up ao rolar (controlado pelo componente Reveal) */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
