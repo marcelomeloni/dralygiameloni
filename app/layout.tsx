@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   title: "Dra. Lygia Meloni | Pediatra Integrativa e Neonatologista",
   description:
     "Pediatria Integrativa e Neonatologia com cuidado acolhedor para bebês e famílias. [PREENCHER cidade]",
+  icons: {
+    icon: [{ url: "/logo.svg", type: "image/svg+xml" }],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+  },
   openGraph: {
     title: "Dra. Lygia Meloni | Pediatra Integrativa e Neonatologista",
     description:
